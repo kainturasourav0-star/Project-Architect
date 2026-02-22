@@ -1,0 +1,94 @@
+
+> fractal-cosmos@0.1.0 lint
+> eslint
+
+
+C:\Users\DELL\.gemini\antigravity\playground\fractal-cosmos\src\app\analyze\page.tsx
+   39:17   error  Error: Calling setState synchronously within an effect can trigger cascading renders
+
+Effects are intended to synchronize state between React and external systems such as manually updating the DOM, state management libraries, or other platform APIs. In general, the body of an effect should do one or both of the following:
+* Update external systems with the latest state from React.
+* Subscribe for updates from some external system, calling setState in a callback function when external state changes.
+
+Calling setState synchronously within an effect body causes cascading renders that can hurt performance, and is not recommended. (https://react.dev/learn/you-might-not-need-an-effect).
+
+C:\Users\DELL\.gemini\antigravity\playground\fractal-cosmos\src\app\analyze\page.tsx:39:17
+  37 |         if (raw) {
+  38 |             try {
+> 39 |                 setSchema(JSON.parse(raw));
+     |                 ^^^^^^^^^ Avoid calling setState() directly within an effect
+  40 |             } catch {
+  41 |                 setSchema(exampleTemplates.ecommerce);
+  42 |             }  react-hooks/set-state-in-effect
+  210:95   error  `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          react/no-unescaped-entities
+  210:109  error  `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          react/no-unescaped-entities
+
+C:\Users\DELL\.gemini\antigravity\playground\fractal-cosmos\src\app\execute\page.tsx
+  66:12  warning  'showReport' is assigned a value but never used                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             @typescript-eslint/no-unused-vars
+  76:9   error    Error: Calling setState synchronously within an effect can trigger cascading renders
+
+Effects are intended to synchronize state between React and external systems such as manually updating the DOM, state management libraries, or other platform APIs. In general, the body of an effect should do one or both of the following:
+* Update external systems with the latest state from React.
+* Subscribe for updates from some external system, calling setState in a callback function when external state changes.
+
+Calling setState synchronously within an effect body causes cascading renders that can hurt performance, and is not recommended. (https://react.dev/learn/you-might-not-need-an-effect).
+
+C:\Users\DELL\.gemini\antigravity\playground\fractal-cosmos\src\app\execute\page.tsx:76:9
+  74 |         const s: WorkflowSchema = rawSchema ? JSON.parse(rawSchema) : exampleTemplates.ecommerce;
+  75 |         const h: AttackHypothesis[] = rawHyps ? JSON.parse(rawHyps) : [];
+> 76 |         setSchema(s);
+     |         ^^^^^^^^^ Avoid calling setState() directly within an effect
+  77 |         setHypotheses(h);
+  78 |         setThreatScore(rawScore ? Number(rawScore) : 0);
+  79 |         setScript(generatePlaywrightScript(s, h));  react-hooks/set-state-in-effect
+
+C:\Users\DELL\.gemini\antigravity\playground\fractal-cosmos\src\app\history\page.tsx
+   3:20  warning  'useEffect' is defined but never used                @typescript-eslint/no-unused-vars
+  23:7   warning  'SEVERITY_COLOR' is assigned a value but never used  @typescript-eslint/no-unused-vars
+
+C:\Users\DELL\.gemini\antigravity\playground\fractal-cosmos\src\app\layout.tsx
+  20:9  warning  Custom fonts not added in `pages/_document.js` will only load for a single page. This is discouraged. See: https://nextjs.org/docs/messages/no-page-custom-font  @next/next/no-page-custom-font
+
+C:\Users\DELL\.gemini\antigravity\playground\fractal-cosmos\src\app\page.tsx
+  60:7  error    Error: Calling setState synchronously within an effect can trigger cascading renders
+
+Effects are intended to synchronize state between React and external systems such as manually updating the DOM, state management libraries, or other platform APIs. In general, the body of an effect should do one or both of the following:
+* Update external systems with the latest state from React.
+* Subscribe for updates from some external system, calling setState in a callback function when external state changes.
+
+Calling setState synchronously within an effect body causes cascading renders that can hurt performance, and is not recommended. (https://react.dev/learn/you-might-not-need-an-effect).
+
+C:\Users\DELL\.gemini\antigravity\playground\fractal-cosmos\src\app\page.tsx:60:7
+  58 |     const played = sessionStorage.getItem('architect_splash_played');
+  59 |     if (!played) {
+> 60 |       setShowSplash(true);
+     |       ^^^^^^^^^^^^^ Avoid calling setState() directly within an effect
+  61 |     } else {
+  62 |       setVisible(true);
+  63 |     }  react-hooks/set-state-in-effect
+  92:6  warning  React Hook useEffect has a missing dependency: 'visible'. Either include it or remove the dependency array                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   react-hooks/exhaustive-deps
+
+C:\Users\DELL\.gemini\antigravity\playground\fractal-cosmos\src\app\protector\page.tsx
+   22:12  warning  'healing' is assigned a value but never used                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     @typescript-eslint/no-unused-vars
+   22:21  warning  'setHealing' is assigned a value but never used                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  @typescript-eslint/no-unused-vars
+   37:9   error    Error: Calling setState synchronously within an effect can trigger cascading renders
+
+Effects are intended to synchronize state between React and external systems such as manually updating the DOM, state management libraries, or other platform APIs. In general, the body of an effect should do one or both of the following:
+* Update external systems with the latest state from React.
+* Subscribe for updates from some external system, calling setState in a callback function when external state changes.
+
+Calling setState synchronously within an effect body causes cascading renders that can hurt performance, and is not recommended. (https://react.dev/learn/you-might-not-need-an-effect).
+
+C:\Users\DELL\.gemini\antigravity\playground\fractal-cosmos\src\app\protector\page.tsx:37:9
+  35 |         const m = localStorage.getItem('architect_sentinel_malware') !== 'false';
+  36 |         const a = localStorage.getItem('architect_sentinel_autofix') !== 'false';
+> 37 |         setToggles({ healing: h, firewall: f, malware: m, autofix: a });
+     |         ^^^^^^^^^^ Avoid calling setState() directly within an effect
+  38 |
+  39 |         const handleStorage = () => {
+  40 |             const nh = localStorage.getItem('architect_sentinel_healing') !== 'false';  react-hooks/set-state-in-effect
+  290:44  error    `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  react/no-unescaped-entities
+  290:64  error    `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  react/no-unescaped-entities
+
+✖ 15 problems (8 errors, 7 warnings)
+
