@@ -49,49 +49,10 @@ Follow these steps to set up the development environment locally.
 - Node.js (v18 or later recommended)
 - A package manager (`npm`, `yarn`, `pnpm`, or `bun`)
 
-### Installation
-
-1. **Clone the repository**
-   ```bash
-   git clone https://github.com/kainturasourav0-star/Project-Architect.git
-   cd Project-Architect
-Install dependencies
-
-bash
-
-Copy
-npm install
-# or
-yarn install
-# or
-pnpm install
-# or
-bun install
-Environment Variables Create a .env.local file in the root directory and configure necessary API keys for the AI pipeline (if applicable):
-
-env
-
-Copy
-NEXT_PUBLIC_API_URL=your_api_endpoint
-# Add other sensitive keys here
-Run the development server
-
-bash
-
-Copy
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-Open the application Navigate to https://localhost:3000 in your browser to see the result.
+.
 
 📂 Project Structure
-text
 
-Copy
 Project-Architect/
 ├── .agent/              # AI agent configurations and workflows
 ├── public/              # Static assets (images, fonts)
@@ -106,6 +67,7 @@ Project-Architect/
 ├── postcss.config.mjs   # PostCSS configuration
 ├── tsconfig.json        # TypeScript configuration
 └── vercel.json          # Vercel deployment configuration
+
 🧪 Usage Workflow
 Upload: Drag and drop a hand-drawn flowchart image.
 Analyze: The system processes the image to identify components (servers, databases, firewalls).
@@ -132,7 +94,5 @@ npm run lint
 📄 License
 Distributed under the MIT License. See LICENSE for more information.
 
-📞 Contact
-Sourav Kaintura - @kainturasourav0-star
 
-Project Link: https://github.com/kainturasourav0-star/Project-Architect
+
